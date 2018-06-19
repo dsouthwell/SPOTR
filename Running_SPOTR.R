@@ -1,6 +1,6 @@
 
 ###################################################################################################################
-#SPATIAL POWER ANALYSIS MODELLING IN R (SPOTR)
+#SPATIAL POWER ANALYSIS FOR DETECTION OCCUPANCY TRENDS IN R (SPOTR)
 ###################################################################################################################
 
 # Darren Southwell
@@ -154,12 +154,12 @@ load.sites <- TRUE #Set to TRUE to simulate monitoring at known, fixed sites in 
 # Users might wish to monitor only a subset of the loaded sites, or alternatively, all of the loaded sites plus others selected randomly throughout the landscape
 # Users should set all.loaded.sites <- TRUE to ONLY monitor the loaded sites, or set all.loaded.sites <- FALSE if they wish to monitor more or less than what is specified.
 
-all.loaded.sites <- FALSE #Set to TRUE to monitor all loaded sites, otherwise FALSE to selecte a subset at random during each simulation
+all.loaded.sites <- TRUE #Set to TRUE to monitor all loaded sites, otherwise FALSE to selecte a subset at random during each simulation
 
 #Specify the number of sites to simulate monitoring.
 #Importantly, if load.sites <- TRUE and all.loaded.sites <- TRUE, then n.sites must equal the number of rows in the sites table.
 
-n.sites <- 100 #Enter the number of sites you wish to simulate monitoring.
+n.sites <- 150 #Enter the number of sites you wish to simulate monitoring.
 
 ###################################################################################################################
 #STEP 5 - Decide WHERE to monitor
@@ -220,7 +220,7 @@ s.years <- c(1,5,Tmax) #the years when monitoring occurs
 # Note, the number of repeat visits can be equal to 0 or should exceed 1 (i.e. not be equal to 1).
 # In the example below, monitoring is conducted for 3 days/nights using method 1, 3 days/nights using method 2, 3 days/nights using method 3 and 5 days/nights using method 4
 
-n.method <- c(3,3,3,5) #Number of repeat visits to sites corresponding to methods 1,2,3,4
+n.method <- c(3,3,3,5) #Number of repeat visits to sites corresponding to methods 1,2,3,4. Must not be equal to 1
 
 ###################################################################################################################
 #Step 7: Set up parameters for power analysis
@@ -249,7 +249,7 @@ trend <- "decreasing" #Choose from "increasing" or "decreasing"
 
 effect.size <- c(0.1,0.4,0.6,0.9) #Decide on the proportional change in occupancy at Tmax. This can be a vector ranging from a small changes in occupancy to very large changes
 
-# Users must set the significance level of the statistical test. Choose from 3 options -0.01, 0.05 or 0.1.
+# Users must set the significance level of the statistical test. Choose from 3 options: 0.01, 0.05 or 0.1.
 
 alpha <- 0.05 #Set significance level
 
