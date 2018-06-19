@@ -94,7 +94,7 @@ run.power(effect.size, nsims, alpha, Tmax, s.years, trend, sites,
 }
 \description{
 This function runs the main power analysis. It starts by creating empty vectors to record the number of times a significant trend is detected in the simulated detection histories
-It then simulates fire at sites if model.fire = TRUE, and models a decline in occupancy over time depending on the specified effect size. 
+It then simulates fire at sites if model.fire = TRUE, and models a decline in occupancy over time depending on the specified effect size.
 Detection histories are simulated at each site given the occupancy status at each site, the number of survey methods used to detect a species and the detection probability of each relevent method.
 Simulated detection histories are loaded into the package unmarked, and a trend in occupancy is modelled over time. The proportion of times a significant trend is detected is recorded.
 This process is repeated for each effect size.

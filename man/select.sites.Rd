@@ -24,7 +24,7 @@ select.sites(sites, n.sites, R, all.loaded.sites, load.sites,
 \item{plot.sites}{Set to TRUE to plot the location of sites for the first simulation, FALSE to not plot the location of sites}
 }
 \description{
-This function positions sites in the landscape for monitoring. Sites can be: 1) pre-selected by loading a file of the XY coordinates; 2) randomly selected at the start of each simulation; 3) randomly stratified across environmental layers at the start of each simulation, or; 3) positioned on cells 
+This function positions sites in the landscape for monitoring. Sites can be: 1) pre-selected by loading a file of the XY coordinates; 2) randomly selected at the start of each simulation; 3) randomly stratified across environmental layers at the start of each simulation, or; 3) positioned on cells
 with the highest expected species richness. If sites are selected randomly, they can also be divided between remote and non-remote areas given the ratio R
 }
 \examples{
@@ -35,10 +35,10 @@ new.site.selection <- 'random'
 R <- 1
 n.sites <- 150
 plot.sites <- TRUE
-xy.sites <- select.sites(sites, n.sites, R, all.loaded.sites, load.sites, new.site.selection, plot.sites) 
+xy.sites <- select.sites(sites, n.sites, R, all.loaded.sites, load.sites, new.site.selection, plot.sites)
 
 #Load in coordinates of 150 sites, but simulate monitoring at 200 sites
-#Select the remaining 50 sites randomly throughout the landscape 
+#Select the remaining 50 sites randomly throughout the landscape
 load.sites <- TRUE
 all.loaded.sites <- FALSE
 new.site.selection <- 'random'
@@ -47,7 +47,7 @@ n.sites <- 100
 plot.sites <- TRUE
 xy.sites <- select.sites(sites, n.sites, R, all.loaded.sites, load.sites, new.site.selection, plot.sites)
 
-#Select 150 sites randomly stratified across environmental layers at the start of each simulation 
+#Select 150 sites randomly stratified across environmental layers at the start of each simulation
 load.sites <- FALSE
 all.loaded.sites <- FALSE
 new.site.selection <- 'stratified'
